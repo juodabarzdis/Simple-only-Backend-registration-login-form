@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div>
+    <h1>New application</h1>
+  </div>
+  <div>
+    {{#if message}}
+      <div>{{message}}</div>
+    {{/if}}
+
+  </div>
+
+  <div>
+    <h1>registered users</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each users}}
+          <tr>
+            <td>{{id}}</td>
+            <td>{{user_name}}</td>
+            <td>{{email}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+  <a href="/register">Register new account</a>
+  <a href="/login">Login</a>
+</div>

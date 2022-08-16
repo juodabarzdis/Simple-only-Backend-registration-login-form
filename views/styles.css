@@ -1,0 +1,50 @@
+body {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form input {
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+button {
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+a {
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+
+a:active {
+  color: #000;
+}
+
+a:hover {
+  color: rgb(176, 176, 176);
+}
+
+table {
+  width: 800px;
+  margin: 10px;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 5px 10px;
+  border: 1px solid #000;
+}
+
+tr:hover {
+  background-color: rgb(176, 176, 176);
+}
