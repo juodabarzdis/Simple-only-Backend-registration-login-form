@@ -29,13 +29,12 @@ const port = process.env.PORT || 3000;
 
 app.get("/", async (req, res) => {
   const message = req.query.message;
-  const users = await database.query(
-    "SELECT id, user_name, email, password FROM users"
+  const accounts = await database.query(
+    "SELECT id, user_name, email, password FROM accounts"
   );
 
-  console.log(users[0]);
   res.render("index", {
-    users: users[0],
+    accounts: accounts[0],
     message,
   });
 });
@@ -50,7 +49,7 @@ app.post("/register", async (req, res) => {
   const { user_name, email, password } = req.body;
   try {
     await database.query(
-      "INSERT INTO users (user_name, email, password) VALUES (?, ?, ?)",
+      "INSERT INTO accounts (user_name, email, password) VALUES (?, ?, ?)",
       [user_name, email, password]
     );
     res.redirect("/?message=Registration successful");
@@ -69,7 +68,7 @@ app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await database.query(
-      "SELECT * FROM users WHERE email = ? AND password = ?",
+      "SELECT * FROM accounts WHERE email = ? AND password = ?",
       [email, password]
     );
     if (user[0].length > 0) {
