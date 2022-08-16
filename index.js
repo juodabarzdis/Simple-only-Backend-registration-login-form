@@ -9,12 +9,21 @@ app.set("views", "./views");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("views"));
 
+// const database = await mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "",
+//   database: "newDatabase",
+// });
+
 const database = await mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "newDatabase",
+  host: "pauliuspetrunin.lt",
+  user: "bit",
+  password: "kulokas",
+  database: "Lukas",
 });
+
+const port = process.env.PORT || 3000;
 
 //RENDER
 
@@ -73,4 +82,4 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.listen(3000);
+app.listen(port);
